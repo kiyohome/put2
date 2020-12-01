@@ -18,19 +18,19 @@ const trashApi = new TrashApi(config);
 const usersApi = new UsersApi(config);
 
 const login = async (userName: string, password: string) => {
-  return usersApi.login({ inlineObject: { userName, password } });
+  return await usersApi.login({ inlineObject: { userName, password } });
 };
 
 const logout = async () => {
-  return usersApi.logout();
+  return await usersApi.logout();
 };
 
 const getTrashList = async () => {
-  return trashApi.getTrashList();
+  return await trashApi.getTrashList();
 };
 
 const postTrash = async (trash: Blob) => {
-  return trashApi.postTrash({ body: trash });
+  return await trashApi.postTrash({ body: trash });
 };
 
 export const BackendService = {

@@ -36,7 +36,9 @@ const Component: React.FC = () => {
   const trashContext = useTrashContext();
 
   useEffect(() => {
-    trashContext.getTrashList();
+    (async () => {
+      await trashContext.getTrashList();
+    })();
   }, []);
 
   return (

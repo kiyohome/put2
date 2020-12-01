@@ -50,7 +50,6 @@ const Component: React.FC = () => {
   }, []);
 
   const takePhoto = async () => {
-
     const result = await ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
@@ -79,7 +78,7 @@ const Component: React.FC = () => {
   const pickUpTrash = async () => {
     const response = await fetch(image);
     const trash = await response.blob();
-    trashContext.postTrash(trash);
+    await trashContext.postTrash(trash);
     setImage('');
     navigation.navigate('home');
   };

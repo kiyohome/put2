@@ -3,8 +3,8 @@ import { BackendService } from '../backend/BackendService';
 import { Trash } from '../backend/generated-rest-client';
 
 interface ContextValueType {
-  getTrashList(): void;
-  postTrash(trash: Blob): void;
+  getTrashList(): Promise<void>;
+  postTrash(trash: Blob): Promise<void>;
   trashList: Trash[];
   point: number;
 }
@@ -18,13 +18,17 @@ export const TrashContextProvider: React.FC = ({ children }) => {
   const [trashList, setTrashList] = useState<Trash[]>([]);
 
   const contextValue: ContextValueType = {
-    getTrashList: () => {
-      BackendService.getTrashList()
-        .then(response => setTrashList(response));
+    getTrashList: async () => {
+      const response = await BackendService.getTrashList();
+      setTrashList(response);
     },
-    postTrash: (trash) => {
-      BackendService.postTrash(trash)
-        .then(response => setTrashList([response, ...trashList]));
+    postTrash: async (trash) => {
+      try {
+        const response = await BackendService.postTrash(trash);
+        setTrashList([response, ...trashList]);
+      } catch (error) {
+        alert(error.status);
+      }
     },
     trashList,
     point: trashList.reduce((total, trash) => total + trash.point, 0),

@@ -2,10 +2,10 @@ import { Configuration, Middleware, TrashApi, UsersApi } from './generated-rest-
 
 const logger: Middleware = {
   pre: async (context) => {
-    console.log(`>> ${context.init.method} ${context.url}`, context.init);
+    console.log(`>> ${context.init.method} ${context.url}`, JSON.stringify(context.init));
   },
   post: async (context) => {
-    console.log(`<< ${context.response.status} ${context.url}`);
+    console.log(`<< ${context.response.status} ${context.url}`, JSON.stringify(context.response));
   },
 };
 

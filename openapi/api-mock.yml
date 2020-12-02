@@ -8,4 +8,4 @@ services:
       - 9080:9080
     volumes:
       - ..:/app
-    command: mock -p 9080 -h 0.0.0.0 /app/backend/openapi.yaml
+    command: mock -p 9080 -h 0.0.0.0 /app/openapi/openapi.yaml

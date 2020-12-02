@@ -38,10 +38,10 @@ const Component: React.FC = () => {
         style={{ height: 200, width: 500 }} />
       <Text style={styles.label}>User name</Text>
       <Input placeholder="Your name" value={userName}
-        onChangeText={(text) => setUserName(text)} />
+        onChangeText={setUserName} />
       <Text style={styles.label}>Password</Text>
       <Input placeholder="Password" secureTextEntry value={password}
-        onChangeText={(text) => setPassword(text)} />
+        onChangeText={setPassword} />
       <Button title="Login" onPress={login} disabled={userName === '' || password === ''} />
     </Page>
   );

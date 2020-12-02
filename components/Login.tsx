@@ -34,13 +34,13 @@ const Component: React.FC = () => {
 
   return (
     <Page>
-      <Image containerStyle={styles.image} source={require('../../assets/logo.png')}
+      <Image containerStyle={styles.image} source={require('../assets/logo.png')}
         style={{ height: 200, width: 500 }} />
       <Text style={styles.label}>User name</Text>
-      <Input placeholder="your name" value={userName}
+      <Input placeholder="Your name" value={userName}
         onChangeText={(text) => setUserName(text)} />
       <Text style={styles.label}>Password</Text>
-      <Input placeholder="xxxxxxxxxx" secureTextEntry value={password}
+      <Input placeholder="Password" secureTextEntry value={password}
         onChangeText={(text) => setPassword(text)} />
       <Button title="Login" onPress={login} disabled={userName === '' || password === ''} />
     </Page>

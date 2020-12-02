@@ -1,21 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { activateKeepAwake } from 'expo-keep-awake';
+import { UserContextProvider } from './contexts/UserContext';
+import { TrashContextProvider } from './contexts/TrashContext';
+import RootNav from './components/RootNav';
 
-export default function App() {
+const App: React.FC = () => {
+
+  if (__DEV__) {
+    activateKeepAwake();
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <UserContextProvider>
+      <TrashContextProvider>
+        <RootNav />
+      </TrashContextProvider>
+    </UserContextProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

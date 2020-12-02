@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import * as ImagePicker from 'expo-image-picker';
 import { StyleSheet, View } from 'react-native';
@@ -83,6 +83,8 @@ const Component: React.FC = () => {
     navigation.navigate('home');
   };
 
+  const invalid = useMemo(() => image === '', [image]);
+
   return (
     <Page>
       <Text style={styles.lead}>Let's go pick up trash!</Text>
@@ -93,7 +95,7 @@ const Component: React.FC = () => {
       </View>
       {image !== '' && <Image source={{ uri: image }} style={styles.image} />}
       <Button title="Pick up trash!" onPress={pickUpTrash}
-              buttonStyle={styles.upload} disabled={image === ''} />
+              buttonStyle={styles.upload} disabled={invalid} />
     </Page>
   );
 };

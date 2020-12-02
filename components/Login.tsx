@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
 import { Button, Image, Input, Text } from 'react-native-elements';
@@ -32,6 +32,8 @@ const Component: React.FC = () => {
     navigation.navigate('main');
   };
 
+  const invalid = useMemo(() => userName === '' || password === '', [userName, password]);
+
   return (
     <Page>
       <Image containerStyle={styles.image} source={require('../assets/logo.png')}
@@ -42,7 +44,7 @@ const Component: React.FC = () => {
       <Text style={styles.label}>Password</Text>
       <Input placeholder="Password" secureTextEntry value={password}
         onChangeText={setPassword} />
-      <Button title="Login" onPress={login} disabled={userName === '' || password === ''} />
+      <Button title="Login" onPress={login} disabled={invalid} />
     </Page>
   );
 };

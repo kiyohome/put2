@@ -7,6 +7,10 @@ import { rootPage, Page } from './RootPage';
 
 const styles = StyleSheet.create({
   image: {
+    height: 200,
+    width: 500,
+  },
+  imageContainer: {
     marginTop: -30,
     marginBottom: 80,
   },
@@ -36,7 +40,7 @@ const Component: React.FC = () => {
 
   return (
     <Page>
-      <Image containerStyle={styles.image} source={require('../assets/logo.png')}
+      <Image containerStyle={styles.imageContainer} source={require('../assets/logo.png')}
         style={{ height: 200, width: 500 }} />
       <Text style={styles.label}>User name</Text>
       <Input placeholder="Your name" value={userName}

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Card, Text } from 'react-native-elements';
-import { useTrashContext } from '../../contexts/TrashContext';
+import { useTrashContext } from '../contexts/TrashContext';
 import { mainPage, Page } from './MainPage';
 
 const styles = StyleSheet.create({

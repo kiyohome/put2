@@ -13,7 +13,8 @@
  */
 
 
-export const BASE_PATH = "http://localhost:9080".replace(/\/+$/, "");
+//export const BASE_PATH = "http://localhost:9080".replace(/\/+$/, "");
+export const BASE_PATH = "http://172.20.10.2:9080".replace(/\/+$/, "");
 
 const isBlob = (value: any) => typeof Blob !== 'undefined' && value instanceof Blob;
 

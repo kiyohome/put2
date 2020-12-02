@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Button } from 'react-native-elements';
-import { useUserContext } from '../../contexts/UserContext';
+import { useUserContext } from '../contexts/UserContext';
 import { Page, mainPage } from './MainPage';
 
 const Component: React.FC = () => {

@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as ImagePicker from 'expo-image-picker';
 import { StyleSheet, View } from 'react-native';
 import { Button, Image, Text } from 'react-native-elements';
-import { useTrashContext } from '../../contexts/TrashContext';
+import { useTrashContext } from '../contexts/TrashContext';
 import { Page, mainPage } from './MainPage';
 
 const styles = StyleSheet.create({

@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import { StyleSheet } from 'react-native';
 import { Header, Icon, normalize } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
-import { useUserContext } from '../../contexts/UserContext';
+import { useUserContext } from '../contexts/UserContext';
 
 const styles = StyleSheet.create({
   header: {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
 import { Button, Image, Input, Text } from 'react-native-elements';
-import { useUserContext } from '../../contexts/UserContext';
+import { useUserContext } from '../contexts/UserContext';
 import { rootPage, Page } from './RootPage';
 
 const styles = StyleSheet.create({

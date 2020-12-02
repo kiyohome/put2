@@ -9,4 +9,21 @@
 
 - [React Native Expo CLI で始めるクロスプラットフォーム開発 はじめの一歩編](https://www.cresco.co.jp/blog/entry/12928/)
 
-スマホで動かす場合はPCとスマホを同じWi-Fiに繋いだ状態で実施してください。
+スマホで動かす場合はPCとスマホを同じネットワークに繋いだ状態で実施してください。
+
+## 動かす方法
+
+Expoをスタートします。
+
+```
+$ npm install
+$ npm run start
+```
+
+npm installは初回のみ。
+
+PCのIPアドレスを確認し、次のファイルのlocalhostを書き換えます。
+
+/put2backend\generated-rest-client\runtime.ts
+
+ブラウザorスマホでアクセスするとアプリを使用できます。

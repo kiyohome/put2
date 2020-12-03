@@ -42,6 +42,12 @@ const Component: React.FC = () => {
 
   useEffect(() => {
     (async () => {
+      const { status } = await ImagePicker.requestCameraPermissionsAsync();
+      if (status !== 'granted') {
+        alert('Sorry, we need camera roll permissions to make this work!');
+      }
+    })();
+    (async () => {
       const { status } = await ImagePicker.requestCameraRollPermissionsAsync();
       if (status !== 'granted') {
         alert('Sorry, we need camera roll permissions to make this work!');
@@ -95,7 +101,7 @@ const Component: React.FC = () => {
       </View>
       {image !== '' && <Image source={{ uri: image }} style={styles.image} />}
       <Button title="Pick up trash!" onPress={pickUpTrash}
-              buttonStyle={styles.upload} disabled={invalid} />
+        buttonStyle={styles.upload} disabled={invalid} />
     </Page>
   );
 };

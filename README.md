@@ -24,7 +24,7 @@ npm installは初回のみ。
 
 PCのIPアドレスを確認し、次のファイルのlocalhostを書き換えます。
 
-/put2backend\generated-rest-client\runtime.ts
+/put2/backend/generated-rest-client/runtime.ts
 
 Docker ComposeでREST APIのモックサーバを立ち上げます。
 

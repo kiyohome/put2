@@ -26,4 +26,11 @@ PCのIPアドレスを確認し、次のファイルのlocalhostを書き換え�
 
 /put2backend\generated-rest-client\runtime.ts
 
+Docker ComposeでREST APIのモックサーバを立ち上げます。
+
+```
+$ cd openapi
+$ docker-compose -f api-mock.yml up
+```
+
 ブラウザorスマホでアクセスするとアプリを使用できます。
